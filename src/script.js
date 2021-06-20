@@ -1,6 +1,6 @@
 import './style.css'
 import * as THREE from 'three'
-import gsap from 'gsap'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 /**
  * Base
@@ -12,7 +12,7 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 /**
- * Base
+ * Object
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1)
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
@@ -30,9 +30,14 @@ const sizes = {
 /**
  * Camera
  */
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height)
+// Base camera
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.z = 3
 scene.add(camera)
+
+// Controls
+const controls = new OrbitControls(camera, canvas)
+controls.enableDamping = true
 
 /**
  * Renderer
@@ -45,10 +50,15 @@ renderer.setSize(sizes.width, sizes.height)
 /**
  * Animate
  */
-gsap.to(mesh.position, { duration: 1, delay: 1, x: 2 })
+const clock = new THREE.Clock()
 
 const tick = () =>
 {
+    const elapsedTime = clock.getElapsedTime()
+
+    // Update controls
+    controls.update()
+
     // Render
     renderer.render(scene, camera)
 
