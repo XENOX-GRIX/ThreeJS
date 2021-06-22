@@ -8,11 +8,11 @@ import * as dat from 'dat.gui'
 // Textures 
 
 const texturLoader = new THREE.TextureLoader()
-const sun=texturLoader.load('/textures/door/sun.jpg')
-const earth=texturLoader.load('/textures/door/earth.png')
-const planet3=texturLoader.load('/textures/door/planet2.jpg')
-const planet1=texturLoader.load('/textures/door/planet1.jpg')
-const backgroung=texturLoader.load('/textures/door/backgroung.jpg')
+const sun=texturLoader.load('/textures/planets/sun.jpg')
+const earth=texturLoader.load('/textures/planets/earth.png')
+const planet3=texturLoader.load('/textures/planets/planet2.jpg')
+const planet1=texturLoader.load('/textures/planets/planet1.jpg')
+const backgroung=texturLoader.load('/textures/planets/backgroung.jpg')
 // // 
 //  * Base
 //  */
