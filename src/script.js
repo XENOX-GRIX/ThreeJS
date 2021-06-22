@@ -8,14 +8,9 @@ import * as dat from 'dat.gui'
 // Textures 
 
 const texturLoader = new THREE.TextureLoader()
-const alpha=texturLoader.load('/textures/door/alpha.jpg')
 const sun=texturLoader.load('/textures/door/sun.jpg')
-const color=texturLoader.load('/textures/door/color.jpg')
 const earth=texturLoader.load('/textures/door/earth.png')
-const metalness=texturLoader.load('/textures/door/metalness.jpg')
-const normal=texturLoader.load('/textures/door/normal.jpg')
 const planet3=texturLoader.load('/textures/door/planet2.jpg')
-const rock=texturLoader.load('/textures/door/rock.jpg')
 const planet1=texturLoader.load('/textures/door/planet1.jpg')
 const backgroung=texturLoader.load('/textures/door/backgroung.jpg')
 // // 
@@ -50,7 +45,7 @@ const material3 = new THREE.MeshBasicMaterial( {map:sun} );
 const sunn = new THREE.Mesh(geometry3,material3);
 scene.add(sunn);
 
-const geometry4 = new THREE.SphereGeometry(45,32,32);
+const geometry4 = new THREE.SphereGeometry(50,32,32);
 const material4 = new THREE.MeshBasicMaterial( {map:planet3} );
 const planet2 = new THREE.Mesh(geometry4,material4);
 scene.add(planet2);
@@ -118,7 +113,7 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(50, sizes.width / sizes.height, 0.1, 50000)
-camera.position.z = 800
+camera.position.z = 1250
 
 scene.add(camera)
 
