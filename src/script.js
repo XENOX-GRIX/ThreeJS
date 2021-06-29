@@ -18,7 +18,7 @@ const clock = new THREE.Clock()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-const matcapTexture = textureLoader.load('textures/matcaps/3.png')
+const matcapTexture = textureLoader.load('textures/matcaps/metalic.png')
 
 
 const fontloader = new THREE.FontLoader()
@@ -28,7 +28,7 @@ fontloader.load(
     (font)=>{
         const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
         const textGeometry = new THREE.TextBufferGeometry(
-            'XENOX GRIX',
+            'XENOX',
             {
                 font: font,
                 size: 0.5,
@@ -50,8 +50,7 @@ fontloader.load(
         const boxGeometry = new THREE.BoxBufferGeometry(0.3, 0.3, 0.3)
         const geometry = new THREE.SphereGeometry( 0.5, 0, 32 );
 
-        for(let i = 0; i < 500; i++)
-        {
+        for(let i = 0; i < 500; i++){
             const donut = new THREE.Mesh(donutGeometry, material)
             donut.position.x = (Math.random() - 0.5) * 70
             donut.position.y = (Math.random() - 0.5) * 70
@@ -62,8 +61,7 @@ fontloader.load(
             donut.scale.set(scale, scale, scale)
             scene.add(donut)
         }
-        for(let i = 0; i < 500; i++)
-        {
+        for(let i = 0; i < 500; i++){
             const boxes = new THREE.Mesh(boxGeometry, material)
             boxes.position.x = (Math.random() - 0.5) * 70
             boxes.position.y = (Math.random() - 0.5) * 70
@@ -74,8 +72,7 @@ fontloader.load(
             boxes.scale.set(scale, scale, scale)
             scene.add(boxes)
         }
-        for(let i = 0; i < 200; i++)
-        {
+        for(let i = 0; i < 200; i++){
             const unknown = new THREE.Mesh(geometry, material)
             unknown.position.x = (Math.random() - 0.5) * 70
             unknown.position.y = (Math.random() - 0.5) * 70
@@ -85,8 +82,8 @@ fontloader.load(
             const scale = Math.random()
             unknown.scale.set(scale, scale, scale)
             scene.add(unknown)
+            
         }
-
     }
 
 )
